@@ -84,19 +84,19 @@
 
 
 
-<meta name="description" content="假设我们有N组(x,t)训练集，记$\mathbf{x}=(x_{1},x_{2},\dots,x_{n})^{T}$，$\mathbf{t}=(t_{1},t_{2},\dots,t_{n})^{T}$，我们的目标是利用这个训练集，预测对新输入变量$\hat{x}$的目标值$\hat{t}$。
-考虑使用多项式拟合$$y(x,\mathbf{w})=w_{0}+w_{1}x+w_{2}x^{2}+">
+<meta name="description" content="多项式拟合假设我们有N组(x,t)训练集，记$\mathbf{x}=(x_{1},x_{2},\dots,x_{n})^{T}$，$\mathbf{t}=(t_{1},t_{2},\dots,t_{n})^{T}$，我们的目标是利用这个训练集，预测对新输入变量$\hat{x}$的目标值$\hat{t}$。
+考虑使用多项式拟合$$y(x,\mathbf{w})=w_{0}+w_{1}x+w_{2}x">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PRML读书笔记-ch01-01">
+<meta property="og:title" content="PRML读书笔记-ch0101-多项式拟合">
 <meta property="og:url" content="http://yoursite.com/2017/01/15/PRML-notes-Ch0101-Polynomial-Curve-Fitting/index.html">
 <meta property="og:site_name" content="leguan's notes">
-<meta property="og:description" content="假设我们有N组(x,t)训练集，记$\mathbf{x}=(x_{1},x_{2},\dots,x_{n})^{T}$，$\mathbf{t}=(t_{1},t_{2},\dots,t_{n})^{T}$，我们的目标是利用这个训练集，预测对新输入变量$\hat{x}$的目标值$\hat{t}$。
-考虑使用多项式拟合$$y(x,\mathbf{w})=w_{0}+w_{1}x+w_{2}x^{2}+">
-<meta property="og:updated_time" content="2017-01-16T08:16:28.000Z">
+<meta property="og:description" content="多项式拟合假设我们有N组(x,t)训练集，记$\mathbf{x}=(x_{1},x_{2},\dots,x_{n})^{T}$，$\mathbf{t}=(t_{1},t_{2},\dots,t_{n})^{T}$，我们的目标是利用这个训练集，预测对新输入变量$\hat{x}$的目标值$\hat{t}$。
+考虑使用多项式拟合$$y(x,\mathbf{w})=w_{0}+w_{1}x+w_{2}x">
+<meta property="og:updated_time" content="2017-01-21T05:23:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PRML读书笔记-ch01-01">
-<meta name="twitter:description" content="假设我们有N组(x,t)训练集，记$\mathbf{x}=(x_{1},x_{2},\dots,x_{n})^{T}$，$\mathbf{t}=(t_{1},t_{2},\dots,t_{n})^{T}$，我们的目标是利用这个训练集，预测对新输入变量$\hat{x}$的目标值$\hat{t}$。
-考虑使用多项式拟合$$y(x,\mathbf{w})=w_{0}+w_{1}x+w_{2}x^{2}+">
+<meta name="twitter:title" content="PRML读书笔记-ch0101-多项式拟合">
+<meta name="twitter:description" content="多项式拟合假设我们有N组(x,t)训练集，记$\mathbf{x}=(x_{1},x_{2},\dots,x_{n})^{T}$，$\mathbf{t}=(t_{1},t_{2},\dots,t_{n})^{T}$，我们的目标是利用这个训练集，预测对新输入变量$\hat{x}$的目标值$\hat{t}$。
+考虑使用多项式拟合$$y(x,\mathbf{w})=w_{0}+w_{1}x+w_{2}x">
 
 
 
@@ -130,7 +130,7 @@
 
 
 
-  <title> PRML读书笔记-ch01-01 | leguan's notes </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> PRML读书笔记-ch0101-多项式拟合 | leguan's notes </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -277,7 +277,7 @@
             
             
               
-                PRML读书笔记-ch01-01
+                PRML读书笔记-ch0101-多项式拟合
               
             
           </h1>
@@ -350,7 +350,7 @@
       
 
       
-        <p>假设我们有N组(x,t)训练集，记$\mathbf{x}=(x_{1},x_{2},\dots,x_{n})^{T}$，$\mathbf{t}=(t_{1},t_{2},\dots,t_{n})^{T}$，我们的目标是利用这个训练集，预测对新输入变量$\hat{x}$的目标值$\hat{t}$。</p>
+        <h1 id="多项式拟合"><a href="#多项式拟合" class="headerlink" title="多项式拟合"></a>多项式拟合</h1><p>假设我们有N组(x,t)训练集，记$\mathbf{x}=(x_{1},x_{2},\dots,x_{n})^{T}$，$\mathbf{t}=(t_{1},t_{2},\dots,t_{n})^{T}$，我们的目标是利用这个训练集，预测对新输入变量$\hat{x}$的目标值$\hat{t}$。</p>
 <p>考虑使用多项式拟合$$y(x,\mathbf{w})=w_{0}+w_{1}x+w_{2}x^{2}+\dots+w_{M}x^{M}=\sum_{j=0}^{M}w_{j}x^{j} \tag{1}$$</p>
 <p>这些多项式的系数可以通过我们的数据拟合得到，即在训练集上最小化一个关于$y(x,\mathbf{w})$和 $t$ 的损失函数。常见的一个损失函数是平方误差和，定义为：$$E(\mathbf{w})=\frac{1}{2}\sum_{n=1}^{N}{y(x,\mathbf{w})-t_{n}}^{2} \tag{2}$$</p>
 <p>为了控制过拟合现象，可以采用正则化（regulariztion）方法，增加一个惩罚项，防止系数达到偏大的值。一个最常用的正则项是平方正则项，即控制所有参数的平方和大小，<br>$$\tilde E(\mathbf{w})=\frac{1}{2}\sum_{n=1}^{N}{y(x_{n},\mathbf{w})-t_{n}}^{2}+\frac{\lambda}{2}\lVert\mathbf{w}\lVert^{2} \tag{3}$$</p>
@@ -391,8 +391,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/01/16/PRML-notes-Ch0102-Probability-Theory/" rel="prev" title="概率论">
-                概率论 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/01/16/PRML-notes-Ch0102-Probability-Theory/" rel="prev" title="PRML读书笔记-ch0102-概率论">
+                PRML读书笔记-ch0102-概率论 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -440,8 +440,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://ww1.sinaimg.cn/mw690/6153e4cejw8f95tutc996j20e80e8jrp.jpg"
@@ -490,6 +499,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#多项式拟合"><span class="nav-number">1.</span> <span class="nav-text">多项式拟合</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
