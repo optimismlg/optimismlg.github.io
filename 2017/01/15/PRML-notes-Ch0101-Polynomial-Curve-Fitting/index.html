@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="leguan's notes">
 <meta property="og:description" content="多项式拟合假设我们有N组(x,t)训练集，记$\mathbf{x}=(x_{1},x_{2},\dots,x_{n})^{T}$，$\mathbf{t}=(t_{1},t_{2},\dots,t_{n})^{T}$，我们的目标是利用这个训练集，预测对新输入变量$\hat{x}$的目标值$\hat{t}$。
 考虑使用多项式拟合$$y(x,\mathbf{w})=w_{0}+w_{1}x+w_{2}x">
-<meta property="og:updated_time" content="2017-01-21T05:23:47.000Z">
+<meta property="og:updated_time" content="2017-01-21T05:55:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PRML读书笔记-ch0101-多项式拟合">
 <meta name="twitter:description" content="多项式拟合假设我们有N组(x,t)训练集，记$\mathbf{x}=(x_{1},x_{2},\dots,x_{n})^{T}$，$\mathbf{t}=(t_{1},t_{2},\dots,t_{n})^{T}$，我们的目标是利用这个训练集，预测对新输入变量$\hat{x}$的目标值$\hat{t}$。
@@ -104,7 +104,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -351,8 +351,7 @@
 
       
         <h1 id="多项式拟合"><a href="#多项式拟合" class="headerlink" title="多项式拟合"></a>多项式拟合</h1><p>假设我们有N组(x,t)训练集，记$\mathbf{x}=(x_{1},x_{2},\dots,x_{n})^{T}$，$\mathbf{t}=(t_{1},t_{2},\dots,t_{n})^{T}$，我们的目标是利用这个训练集，预测对新输入变量$\hat{x}$的目标值$\hat{t}$。</p>
-<p>考虑使用多项式拟合$$y(x,\mathbf{w})=w_{0}+w_{1}x+w_{2}x^{2}+\dots+w_{M}x^{M}=\sum_{j=0}^{M}w_{j}x^{j} \tag{1}$$</p>
-<p>这些多项式的系数可以通过我们的数据拟合得到，即在训练集上最小化一个关于$y(x,\mathbf{w})$和 $t$ 的损失函数。常见的一个损失函数是平方误差和，定义为：$$E(\mathbf{w})=\frac{1}{2}\sum_{n=1}^{N}{y(x,\mathbf{w})-t_{n}}^{2} \tag{2}$$</p>
+<p>考虑使用多项式拟合$$y(x,\mathbf{w})=w_{0}+w_{1}x+w_{2}x^{2}+\dots+w_{M}x^{M}=\sum_{j=0}^{M}w_{j}x^{j} \tag{1}$$<br><a id="more"></a><br>这些多项式的系数可以通过我们的数据拟合得到，即在训练集上最小化一个关于$y(x,\mathbf{w})$和 $t$ 的损失函数。常见的一个损失函数是平方误差和，定义为：$$E(\mathbf{w})=\frac{1}{2}\sum_{n=1}^{N}{y(x,\mathbf{w})-t_{n}}^{2} \tag{2}$$</p>
 <p>为了控制过拟合现象，可以采用正则化（regulariztion）方法，增加一个惩罚项，防止系数达到偏大的值。一个最常用的正则项是平方正则项，即控制所有参数的平方和大小，<br>$$\tilde E(\mathbf{w})=\frac{1}{2}\sum_{n=1}^{N}{y(x_{n},\mathbf{w})-t_{n}}^{2}+\frac{\lambda}{2}\lVert\mathbf{w}\lVert^{2} \tag{3}$$</p>
 <p>其中$\lVert\mathbf{w}\lVert^{2}=w_{0}^{2}+w_{1}^{2}+\dots+w_{m}^{2}$，$\lambda$是控制正则项和误差项的相对重要性。</p>
 
@@ -381,8 +380,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/15/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/01/15/Build-person-blog-with-hexo-and-github/" rel="next" title="Hexo+github搭建个人博客">
+                <i class="fa fa-chevron-left"></i> Hexo+github搭建个人博客
               </a>
             
           </div>
@@ -472,12 +471,19 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
           
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -545,7 +551,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -612,13 +618,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>

@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -100,7 +100,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -352,36 +352,14 @@
 
       
         
-          
-            <h1 id="概率论"><a href="#概率论" class="headerlink" title="概率论"></a>概率论</h1><p>加法法则：<br>$$p(X)=\sum_{Y}p(X,Y)$$<br>乘法法则：<br>$$p(X,Y)=p(Y|X)P(X)$$<br>其中，$p(X,Y)$为联合概率，$p(Y|X)$为条件概率</p>
-<p>由乘法法则可得贝叶斯公式：<br>$$p(Y|X)=\frac{p(X|Y)P(Y)}{p(X)}$$<br>再由加法法则，贝叶斯公式的分母可以写成<br>$$p(X)=\sum_{Y}p(X,Y)=\sum_{Y}p(X|Y)P(Y)$$<br>如果$p(X,Y)=p(X)p(Y)$，那么$X,Y$是独立的。</p>
-<h2 id="概率密度"><a href="#概率密度" class="headerlink" title="概率密度"></a>概率密度</h2><h3 id="概率密度函数"><a href="#概率密度函数" class="headerlink" title="概率密度函数"></a>概率密度函数</h3><p>对于实数$x$，概率密度$p(x)$定义为：当$\delta x \rightarrow 0$时，变量$x$落在区间$(x,x+\delta x)$范围为的概率为$p(x)\delta x$。$x$落在区间$(a,b)$的概率为： $$p(x \in (a.b))= \int_{a}^{b} p(x)dx$$<br>概率密度函数，需要满足以下两个条件：<br>$$p(x) \ge 0$$<br>$$\int _{-\infty}^{\infty}p(x)dx=1$$</p>
-<h3 id="累计分布函数"><a href="#累计分布函数" class="headerlink" title="累计分布函数"></a>累计分布函数</h3><p>累计分布函数定义为：$$P(z)=\int_{-\infty}^{z}p(x)dx$$<br>满足$P’(x)=p(x)$。</p>
-<h3 id="联合概率密度"><a href="#联合概率密度" class="headerlink" title="联合概率密度"></a>联合概率密度</h3><p>对于多个变量$x_{1},\dots,x_{D}$（用$\mathbf x$表示），定义联合概率密度为$p(\mathbf x)=p(x_{1},\dots,x_{D})$，满足当$\mathbf x$落在一个包含$\mathbf x$的足够小空间$\delta \mathbf x$中时，其概率为$p(\mathbf x)\delta\mathbf x$，也需要满足<br>$$p(\mathbf x) \ge 0$$<br>$$\int _{-\infty}^{\infty}p(\mathbf x)d\mathbf x=1$$</p>
-<h2 id="期望和方差"><a href="#期望和方差" class="headerlink" title="期望和方差"></a>期望和方差</h2><h3 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h3><p>函数$f(x)$在概率密度函数$p(x)$下的均值叫做$f(x)$的期望。<br>离散分布下，定义为：<br>$$\mathbb{E}[f]=\sum_{x}p(x)f(x)$$<br>连续分布下，定义为：<br>$$\mathbb{E}[f]=\int_p(x)f(x)$$</p>
-<h3 id="条件期望"><a href="#条件期望" class="headerlink" title="条件期望"></a>条件期望</h3><p>多元函数可以对其中一个参数求期望，例如$\mathbb{E}_{x}[f(x,y)]$是函数$f(x,y)$在概率密度$f(x)$上的期望。考虑$f(x,y)$在条件分布$p(x|y)$下的条件期望。当$x$是离散变量时，定义为<br>$$\mathbb{E}_{x}[f(|y)]=\sum_{x}p(x|y)f(x)$$</p>
-<h3 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h3><p>$f(x)$的方差定义为<br>$$var[f]=\mathbb{E}[(f(x)-\mathbb{E}[f(x)])^2]$$<br>平方展开后，可以写为<br>$$var[f]=\mathbb{E}[f(x^2)]-(\mathbb{E}f(x))^2$$<br>特别地，考虑$x$本身的方差<br>$$var[x]=\mathbb{E}[x^2]-\mathbb{E}[x]^2$$</p>
-<h3 id="协方差"><a href="#协方差" class="headerlink" title="协方差"></a>协方差</h3><p>对于两个随机变量$x,y$，协方差定义为：<br>$$\begin{split}<br>cov[x,y]&amp;=\mathbb{E}_{x,y}[{x-\mathbb{E}[x]}{y-\mathbb{E}[y]}] \\<br>&amp;=\mathbb{E}_{x,y}[xy]-\mathbb{E}[x]\mathbb{E}[y]<br>\end{split}$$<br>当变量$x,y$独立时，协方差为0.</p>
-<h3 id="协方差矩阵"><a href="#协方差矩阵" class="headerlink" title="协方差矩阵"></a>协方差矩阵</h3><p>对于两个随机向量$\mathbf{x},\mathbf{y}$，其协方差为矩阵：<br>$$\begin{split}<br>cov[\mathbf{x},\mathbf{y}]&amp;=\mathbb{E}_{\mathbf{x},\mathbf{y}}[{\mathbf{x}-\mathbb{E}[\mathbf{x}]}{\mathbf{y}^{T}-\mathbb{E}[\mathbf{y}^{T}]}] \\<br>&amp;=\mathbb{E}_{\mathbf{x},\mathbf{y}}[\mathbf{x}\mathbf{y}^{T}]-\mathbb{E}[\mathbf{x}]\mathbb{E}[\mathbf{y}^{T}]<br>\end{split}$$</p>
-<h2 id="贝叶斯概率"><a href="#贝叶斯概率" class="headerlink" title="贝叶斯概率"></a>贝叶斯概率</h2><p>假设我们有一组模型参数$\mathbf{w}$，先验概率分布为$p(\mathbf{w})$，$\mathcal{D}={t_{1},\dots,t_{N}}$为一组观测数据，这组数据在$\mathbf{w}$的条件概率分布为$p(\mathcal{D}|\mathbf{w})$。<br>贝叶斯公式告诉我们：<br>$$p(\mathbf{w}|\mathcal{D})=\frac{p(\mathcal{D}|\mathbf{w})p(\mathbf{w})}{p(\mathcal{D})}$$</p>
-<h3 id="似然函数"><a href="#似然函数" class="headerlink" title="似然函数"></a>似然函数</h3><p>$p(\mathcal{D}|\mathbf{w})$可以看作是给定观测数据$\mathcal{D}$的情况下关于参数$\mathbf{w}$的一个函数，叫做似然函数(likelihood function)，它反映了给定参数向量$\mathbf{w}$的情况下，生成这组观测数据的可能性。</p>
-<p>上面的贝叶斯也可以写为<br>$$posterior\varpropto likelihood \times prior$$<br>这三个量都是$\mathbf{w}$的函数。</p>
-<p>在贝叶斯学派和频率学派眼中，似然函数$p(\mathcal{D}|\mathbf{w})$扮演了重要的角色，但是两者的认知各异。</p>
-<ul>
-<li>频率学派认为，$\mathbf{w}$是一个固定参数，由某些估计只来决定，误差的计算要考虑数据$\mathcal{D}$的分布。</li>
-<li>贝叶斯学派认为，数据集$\mathcal{D}$是固定的，参数$\mathbf{w}$的不确定性可用$\mathbf{w}$的概率分布来表示。</li>
-</ul>
-<h3 id="频率估计：最大似然"><a href="#频率估计：最大似然" class="headerlink" title="频率估计：最大似然"></a>频率估计：最大似然</h3><p>最常用的频率估计量是最大似然(maximum likelihood)，选择合适的$\mathbf{w}$以最大化似然函数。在机器学习的文献中，似然函数的负对数叫做损失函数(error function)，因为负对数函数是单调递减函数，因此最大似然相当于最小化损失函数。</p>
-<h3 id="贝叶斯估计"><a href="#贝叶斯估计" class="headerlink" title="贝叶斯估计"></a>贝叶斯估计</h3><p>贝叶斯估计的一个重要观点是引入先验知识，根据后验概率决定参数$\mathbf{w}$。</p>
-<h2 id="高斯分布"><a href="#高斯分布" class="headerlink" title="高斯分布"></a>高斯分布</h2><p>高斯分布，又称为正态分布，定义为：<br>$$\mathcal{N}(x|\mu,\sigma^{2})=\frac{1}{(2\pi\sigma^{2})^{1/2}}exp\lbrace-\frac{1}{2\sigma^{2}}(x-\mu)^2\rbrace$$<br>其中$\mu$为均值，$\sigma^2$为方差，方差的平方根$\sigma$为标准差。</p>
-<h3 id="多维高斯分布"><a href="#多维高斯分布" class="headerlink" title="多维高斯分布"></a>多维高斯分布</h3><p>对于$D$维的向量$\mathbf{x}$，高斯分布定义为：<br>$$\mathcal{N}(x|\mu,\Sigma)=\frac{1}{(2\pi)^{D/2}}\frac{1}{|\Sigma|^{1/2}}exp\lbrace-\frac{1}{2}(\mathbf{x}-\mu)^{T}\Sigma^{-1}(\mathbf{x}-\mu)\rbrace$$<br>其中，$D$维的向量$\mu$是均值，$D\times D$矩阵$\Sigma$是方差，$|\Sigma|$是其行列式。</p>
-<h3 id="最大似然估计"><a href="#最大似然估计" class="headerlink" title="最大似然估计"></a>最大似然估计</h3><p>假设我们有$N$个对$x$的观测数据，记为$\mathbf{x}=(x_1,\dots,x_N)^T$，这些数据是独立同分布(independent and identically distributed, i.i.d.)的，服从均值为$\mu$，方差为$\sigma^2$的高斯分布，则给定$\mu$和$\sigma^2$的情况下，概率密度为：<br>$$p(\mathbf{x}|\mu,\sigma^{2})=\prod_{n=1}^{N}\mathcal{N}(x_n|\mu,\sigma^2)$$<br>当以上公式看作是关于$\mu$和$\sigma$的函数时，即为似然函数。为了确定未知参数，需要求解最大似然函数问题。由于对数函数是单调递增的，因此上式两边可取对数，得到<br>$$\ln p(\mathbf{x}|\mu,\sigma^{2})=-\frac{1}{2\sigma^2}\sum_{n=1}^{N}(x_N-\mu)^2-\frac{N}{2}\ln \sigma^2-\frac{N}{2}\ln (2\pi)$$<br>对$\mu$最大化，得到最大似然解：<br>$$\mu_{ML}=\frac{1}{N}\sum_{n=1}^{N}x_n$$<br>对$\sigma^2$最大化，得到最大似然解：<br>$$\sigma_{ML}^2=\frac{1}{N}\sum_{n=1}^{N}(x_n-\mu_{ML})^2$$<br>但是这个解不是无偏的，可以计算期望<br>$$\mathbb{E}[\mu_{ML}]=\mu$$<br>$$\mathbb{E}[\sigma_{ML}^2]=(\frac{N-1}{N})\sigma^2$$<br>因此，方差的无偏估计为：<br>$$\tilde{\sigma}^2=\frac{N}{N-1}\sigma_{ML}^2=\frac{1}{N-1}\sum_{n=1}^{N}(x_n-\mu_{ML})^2$$</p>
-<h2 id="重新理解曲线拟合"><a href="#重新理解曲线拟合" class="headerlink" title="重新理解曲线拟合"></a>重新理解曲线拟合</h2><p>重新考虑曲线拟合问题，设输入为$x=(x_1,\dots,x_N)^T$，对应的目标值为$t=(t_1,\dots,t_N)^T$，可以把$t$看作是以$y(x,\mathbf{w})$为均值的高斯分布：<br>$$p(t|x,\mathbf{w},\beta)=\mathcal{N}(t|y(x,\mathbf{w}),\beta^{-1})$$</p>
-<h3 id="最大似然"><a href="#最大似然" class="headerlink" title="最大似然"></a>最大似然</h3><p>我们可以使用最大似然方法从训练数据${\mathbf{x},\mathbf{t}}$中求解参数$\mathbf{w}$和$\beta$，设训练集数据是独立同分布的，似然函数为：<br>$$p(\mathbf{t}|\mathbf{x},\mathbf{w},\beta)=\prod_{n=1}^{N}\mathcal{N}(t_n|y(x_n,w),\beta^{-1})$$<br>两边去对数有<br>$$\ln p(\mathbf{t}|\mathbf{x},\mathbf{w},\beta)=-\frac{\beta}{2}\sum_{n=1}^{N}\lbrace y(x_n,\mathbf{w})\rbrace^2+\frac{N}{2}\ln \beta-\frac{N}{2}\ln (2\pi)$$<br>设最大似然解为$\mathbf{w}_{ML}$，最大对数似然的问题等价为<br>$$\min \frac{1}{2}\sum_{n=1}^{N}\lbrace y(x_n,\mathbf{w})\rbrace^2$$<br>即为最小化平方误差和。<br>再对精度$\beta$求最大似然，有<br>$$\frac{1}{\beta_{ML}}=\frac{1}{N}\sum_{n=1}^{N}\lbrace y(x_n,\mathbf{w}_{ML})-t_n\rbrace^2$$<br>因此，基于以上最大似然解，对于一个新的输入$x$，其输出$t$满足<br>$$p(t|x,\mathbf{w}_{ML},\beta_{ML})=\mathcal{N}(t|y(x,\mathbf{w}_{ML}),\beta_{ML}^{-1})$$</p>
-<h3 id="最大后验"><a href="#最大后验" class="headerlink" title="最大后验"></a>最大后验</h3><p>假设系数$\mathbf{w}$有一个先验知识$M+1$维多项式（加上常数项），$\alpha$为控制参数，有<br>$$p(\mathbf{w}|\alpha)=\mathcal{N}(\mathbf{w}|0,\alpha^{-1}\mathbf{I})=(\frac{\alpha}{2\pi})^{(M+1)/2}exp\lbrace-\frac{\alpha}{2}\mathbf{w}^T\mathbf{w}\rbrace$$<br>由贝叶斯公式，后验概率正比于先验概率和似然函数的乘积：<br>$$p(\mathbf{w}|\mathbf{x},\mathbf{t},\alpha,\beta)\varpropto p(\mathbf{w}|\mathbf{x},\mathbf{t},w,\beta)p(w|\alpha)$$<br>我们可以通过最大化后验概率(maximum posterior, MAP)来确定参数$\mathbf{w}$的值，对上式求对数，去除跟$\mathbf{w}$无关项，得到<br>$$\max \frac{\beta}{2}\sum_{n=1}^{N}\lbrace y(x_n,\mathbf{w})\rbrace^2+\frac{\alpha}{2}\mathbf{w}^T\mathbf{w}$$<br>因此，MAP的结果等价于均方误差加上二次正则化，其中正则参数 $\lambda=\alpha/\beta$</p>
-<h2 id="贝叶斯曲线拟合"><a href="#贝叶斯曲线拟合" class="headerlink" title="贝叶斯曲线拟合"></a>贝叶斯曲线拟合</h2><p>虽然在MAP中我们引入了先验分布，但是本质上它是单点估计。一个完全的贝叶斯估计要求对$\mathbf{w}$的所有值进行积分。<br>对于多项式拟合问题，给定训练集$\mathbf{x}$和$\mathbf{t}$，对于一个新的测试样例$x$，目标值为$t$，考虑分布$p(t|x,\mathbf{x},\mathbf{t})$：<br>$$p(t|x,\mathbf{x},\mathbf{t})=\int p(t|x,\mathbf{w})p(\mathbf{w}|\mathbf{x},\mathbf{t})dw$$<br>其中$p(t|x,\mathbf{w})$是给定的高斯分布，$p(\mathbf{w}|\mathbf{x},\mathbf{t})$是训练集的后验概率（高斯分布），因此上式也是高斯分布，可以写成<br>$$p(t|x,\mathbf{x},\mathbf{t})=\mathcal{N}(t|m(x)),s^2(x))$$</p>
-
-          
+          <h1 id="概率论"><a href="#概率论" class="headerlink" title="概率论"></a>概率论</h1><p>加法法则：<br>$$p(X)=\sum_{Y}p(X,Y)$$<br>乘法法则：<br>$$p(X,Y)=p(Y|X)P(X)$$<br>其中，$p(X,Y)$为联合概率，$p(Y|X)$为条件概率<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/01/16/PRML-notes-Ch0102-Probability-Theory/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -519,14 +497,15 @@
 
       
         
-          
-            <h1 id="多项式拟合"><a href="#多项式拟合" class="headerlink" title="多项式拟合"></a>多项式拟合</h1><p>假设我们有N组(x,t)训练集，记$\mathbf{x}=(x_{1},x_{2},\dots,x_{n})^{T}$，$\mathbf{t}=(t_{1},t_{2},\dots,t_{n})^{T}$，我们的目标是利用这个训练集，预测对新输入变量$\hat{x}$的目标值$\hat{t}$。</p>
-<p>考虑使用多项式拟合$$y(x,\mathbf{w})=w_{0}+w_{1}x+w_{2}x^{2}+\dots+w_{M}x^{M}=\sum_{j=0}^{M}w_{j}x^{j} \tag{1}$$</p>
-<p>这些多项式的系数可以通过我们的数据拟合得到，即在训练集上最小化一个关于$y(x,\mathbf{w})$和 $t$ 的损失函数。常见的一个损失函数是平方误差和，定义为：$$E(\mathbf{w})=\frac{1}{2}\sum_{n=1}^{N}{y(x,\mathbf{w})-t_{n}}^{2} \tag{2}$$</p>
-<p>为了控制过拟合现象，可以采用正则化（regulariztion）方法，增加一个惩罚项，防止系数达到偏大的值。一个最常用的正则项是平方正则项，即控制所有参数的平方和大小，<br>$$\tilde E(\mathbf{w})=\frac{1}{2}\sum_{n=1}^{N}{y(x_{n},\mathbf{w})-t_{n}}^{2}+\frac{\lambda}{2}\lVert\mathbf{w}\lVert^{2} \tag{3}$$</p>
-<p>其中$\lVert\mathbf{w}\lVert^{2}=w_{0}^{2}+w_{1}^{2}+\dots+w_{m}^{2}$，$\lambda$是控制正则项和误差项的相对重要性。</p>
-
-          
+          <h1 id="多项式拟合"><a href="#多项式拟合" class="headerlink" title="多项式拟合"></a>多项式拟合</h1><p>假设我们有N组(x,t)训练集，记$\mathbf{x}=(x_{1},x_{2},\dots,x_{n})^{T}$，$\mathbf{t}=(t_{1},t_{2},\dots,t_{n})^{T}$，我们的目标是利用这个训练集，预测对新输入变量$\hat{x}$的目标值$\hat{t}$。</p>
+<p>考虑使用多项式拟合$$y(x,\mathbf{w})=w_{0}+w_{1}x+w_{2}x^{2}+\dots+w_{M}x^{M}=\sum_{j=0}^{M}w_{j}x^{j} \tag{1}$$<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/01/15/PRML-notes-Ch0101-Polynomial-Curve-Fitting/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -563,7 +542,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/15/hello-world/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/15/Build-person-blog-with-hexo-and-github/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="乐冠">
@@ -588,8 +567,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/01/15/hello-world/" itemprop="url">
-                  Hello World
+                <a class="post-title-link" href="/2017/01/15/Build-person-blog-with-hexo-and-github/" itemprop="url">
+                  Hexo+github搭建个人博客
                 </a>
               
             
@@ -605,7 +584,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-15T16:39:57+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-15T16:39:42+08:00">
                 2017-01-15
               </time>
             
@@ -615,6 +594,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -642,18 +643,15 @@
 
       
         
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
+          <p>工作已3年有余，国企的慢节奏已荒废了不少技术，经历了各种焦虑、迷茫，下定决心要在闲暇之余积累技术知识。在学习Machine Learning的过程中，看到一篇<a href="http://www.csuldw.com/2016/03/26/2016-03-26-loss-function/">博文</a>，博客的风格甚是喜欢，因此动了念头搭建自己的博客。一来当作是技术学习的笔记整理，提，二来用于记录生活的点滴和个人感悟。目前，博客托管在github中，未来想申请个人域名来部署。</p>
+<p><a href="https://hexo.io/">Hexo</a>是个轻量级的基于Nodejs的静态博客框架，好像是个台湾人写的。我是在macbook上安装的hexo，风格采用的是<a href="http://theme-next.iissnan.com/">NexT</a>。整个部署过程包括本地安装、github配置与部署、NexT风格配置。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/01/15/Build-person-blog-with-hexo-and-github/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -733,12 +731,19 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
           
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -790,7 +795,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -857,13 +862,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
 
   
 

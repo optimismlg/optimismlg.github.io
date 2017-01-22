@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -84,19 +84,16 @@
 
 
 
-<meta name="description" content="概率论加法法则：$$p(X)=\sum_{Y}p(X,Y)$$乘法法则：$$p(X,Y)=p(Y|X)P(X)$$其中，$p(X,Y)$为联合概率，$p(Y|X)$为条件概率
-由乘法法则可得贝叶斯公式：$$p(Y|X)=\frac{p(X|Y)P(Y)}{p(X)}$$再由加法法则，贝叶斯公式的分母可以写成$$p(X)=\sum_{Y}p(X,Y)=\sum_{Y}p(X|Y)P(Y)$$如果$p">
+<meta name="description" content="概率论加法法则：$$p(X)=\sum_{Y}p(X,Y)$$乘法法则：$$p(X,Y)=p(Y|X)P(X)$$其中，$p(X,Y)$为联合概率，$p(Y|X)$为条件概率">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PRML读书笔记-ch0102-概率论">
 <meta property="og:url" content="http://yoursite.com/2017/01/16/PRML-notes-Ch0102-Probability-Theory/index.html">
 <meta property="og:site_name" content="leguan's notes">
-<meta property="og:description" content="概率论加法法则：$$p(X)=\sum_{Y}p(X,Y)$$乘法法则：$$p(X,Y)=p(Y|X)P(X)$$其中，$p(X,Y)$为联合概率，$p(Y|X)$为条件概率
-由乘法法则可得贝叶斯公式：$$p(Y|X)=\frac{p(X|Y)P(Y)}{p(X)}$$再由加法法则，贝叶斯公式的分母可以写成$$p(X)=\sum_{Y}p(X,Y)=\sum_{Y}p(X|Y)P(Y)$$如果$p">
-<meta property="og:updated_time" content="2017-01-21T05:22:07.000Z">
+<meta property="og:description" content="概率论加法法则：$$p(X)=\sum_{Y}p(X,Y)$$乘法法则：$$p(X,Y)=p(Y|X)P(X)$$其中，$p(X,Y)$为联合概率，$p(Y|X)$为条件概率">
+<meta property="og:updated_time" content="2017-01-21T05:54:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PRML读书笔记-ch0102-概率论">
-<meta name="twitter:description" content="概率论加法法则：$$p(X)=\sum_{Y}p(X,Y)$$乘法法则：$$p(X,Y)=p(Y|X)P(X)$$其中，$p(X,Y)$为联合概率，$p(Y|X)$为条件概率
-由乘法法则可得贝叶斯公式：$$p(Y|X)=\frac{p(X|Y)P(Y)}{p(X)}$$再由加法法则，贝叶斯公式的分母可以写成$$p(X)=\sum_{Y}p(X,Y)=\sum_{Y}p(X|Y)P(Y)$$如果$p">
+<meta name="twitter:description" content="概率论加法法则：$$p(X)=\sum_{Y}p(X,Y)$$乘法法则：$$p(X,Y)=p(Y|X)P(X)$$其中，$p(X,Y)$为联合概率，$p(Y|X)$为条件概率">
 
 
 
@@ -104,7 +101,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -350,8 +347,7 @@
       
 
       
-        <h1 id="概率论"><a href="#概率论" class="headerlink" title="概率论"></a>概率论</h1><p>加法法则：<br>$$p(X)=\sum_{Y}p(X,Y)$$<br>乘法法则：<br>$$p(X,Y)=p(Y|X)P(X)$$<br>其中，$p(X,Y)$为联合概率，$p(Y|X)$为条件概率</p>
-<p>由乘法法则可得贝叶斯公式：<br>$$p(Y|X)=\frac{p(X|Y)P(Y)}{p(X)}$$<br>再由加法法则，贝叶斯公式的分母可以写成<br>$$p(X)=\sum_{Y}p(X,Y)=\sum_{Y}p(X|Y)P(Y)$$<br>如果$p(X,Y)=p(X)p(Y)$，那么$X,Y$是独立的。</p>
+        <h1 id="概率论"><a href="#概率论" class="headerlink" title="概率论"></a>概率论</h1><p>加法法则：<br>$$p(X)=\sum_{Y}p(X,Y)$$<br>乘法法则：<br>$$p(X,Y)=p(Y|X)P(X)$$<br>其中，$p(X,Y)$为联合概率，$p(Y|X)$为条件概率<br><a id="more"></a><br>由乘法法则可得贝叶斯公式：<br>$$p(Y|X)=\frac{p(X|Y)P(Y)}{p(X)}$$<br>再由加法法则，贝叶斯公式的分母可以写成<br>$$p(X)=\sum_{Y}p(X,Y)=\sum_{Y}p(X|Y)P(Y)$$<br>如果$p(X,Y)=p(X)p(Y)$，那么$X,Y$是独立的。</p>
 <h2 id="概率密度"><a href="#概率密度" class="headerlink" title="概率密度"></a>概率密度</h2><h3 id="概率密度函数"><a href="#概率密度函数" class="headerlink" title="概率密度函数"></a>概率密度函数</h3><p>对于实数$x$，概率密度$p(x)$定义为：当$\delta x \rightarrow 0$时，变量$x$落在区间$(x,x+\delta x)$范围为的概率为$p(x)\delta x$。$x$落在区间$(a,b)$的概率为： $$p(x \in (a.b))= \int_{a}^{b} p(x)dx$$<br>概率密度函数，需要满足以下两个条件：<br>$$p(x) \ge 0$$<br>$$\int _{-\infty}^{\infty}p(x)dx=1$$</p>
 <h3 id="累计分布函数"><a href="#累计分布函数" class="headerlink" title="累计分布函数"></a>累计分布函数</h3><p>累计分布函数定义为：$$P(z)=\int_{-\infty}^{z}p(x)dx$$<br>满足$P’(x)=p(x)$。</p>
 <h3 id="联合概率密度"><a href="#联合概率密度" class="headerlink" title="联合概率密度"></a>联合概率密度</h3><p>对于多个变量$x_{1},\dots,x_{D}$（用$\mathbf x$表示），定义联合概率密度为$p(\mathbf x)=p(x_{1},\dots,x_{D})$，满足当$\mathbf x$落在一个包含$\mathbf x$的足够小空间$\delta \mathbf x$中时，其概率为$p(\mathbf x)\delta\mathbf x$，也需要满足<br>$$p(\mathbf x) \ge 0$$<br>$$\int _{-\infty}^{\infty}p(\mathbf x)d\mathbf x=1$$</p>
@@ -490,12 +486,19 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
           
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -563,7 +566,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -630,13 +633,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
